@@ -16,14 +16,14 @@ const PictureListExample = () => {
           desc={item.desc}
           actions={
             <div>
-              <Button size="small" className="cus-p" text>
-                ✒ 编辑
+              <Button size="small" text>
+                ✒编辑
               </Button>
-              <Button size="small" className="cus-p" text>
-                🗑 删除
+              <Button size="small" text>
+                🗑删除
               </Button>
-              <Button size="small" className="cus-p" text>
-                🔒 锁定
+              <Button size="small" text>
+                🔒锁定
               </Button>
             </div>
           }
