@@ -1,0 +1,43 @@
+.PictureList {
+  display: inline-block;
+  vertical-align: top;
+  padding: 16px;
+  width: 25%;
+
+  &:global(.__xs) {
+    width: 100%;
+    padding: 8px;
+  }
+
+  &:global(.__sm) {
+    width: 50%;
+    padding: 8px;
+  }
+
+  &:global(.__md) {
+    width: 33.333%;
+  }
+
+  &Wrap {
+    background-color: #fff;
+    border-radius: var(--m78-border-radius);
+    overflow: hidden;
+    box-shadow: var(--m78-shadow-1);
+
+    &:hover {
+      box-shadow: var(--m78-shadow-1-focus);
+    }
+  }
+
+  &Image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &Desc {
+    min-height: 45px;
+  }
+}
+

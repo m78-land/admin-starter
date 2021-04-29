@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "types": ["vite/client"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+//      "@m78/admin": ["src/index.tsx"],
+    },
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "strictPropertyInitialization": false,
+    "importHelpers": true,
+  },
+  "include": [
+    "src/**/*",
+    "./app.d.ts",
+    "test",
+    /* 以下配置配合eslint解析 */
+    "./config",
+    ".eslintrc.js",
+    ".prettierrc.js",
+    "babel.config.js"
+  ],
+  "exclude": [
+    "dist",
+  ]
+}

@@ -1,0 +1,19 @@
+.TextList {
+  padding: 18px 24px;
+
+  &:global(.__small) {
+    padding: 8px;
+  }
+
+  & + & {
+    border-top: 1px solid var(--m78-color-divider);
+  }
+
+  &Title {
+    font-size: 18px;
+  }
+
+  & > * {
+    margin-top: 8px;
+  }
+}
