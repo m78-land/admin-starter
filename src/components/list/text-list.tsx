@@ -2,9 +2,9 @@ import { Button } from 'm78/button';
 import React from 'react';
 import Logo from '@m78/admin/assets/logo.png';
 
-import sty from './text-list.module.scss';
 import { MediaQueryType } from '@m78/admin';
 import clsx from 'clsx';
+import sty from './text-list.module.scss';
 
 interface Props {
   /** 标题 */
@@ -13,11 +13,13 @@ interface Props {
   desc: React.ReactNode;
   /** 标签 */
   tags?: string[];
+  /** 信息区域 */
+  infos?: React.ReactNode;
   /** 操作 */
   actions?: React.ReactNode;
 }
 
-const TextList = ({ title, desc, tags, actions }: Props) => {
+const TextList = ({ title, desc, tags, infos, actions }: Props) => {
   return (
     <MediaQueryType>
       {meta => (
@@ -37,18 +39,11 @@ const TextList = ({ title, desc, tags, actions }: Props) => {
             </div>
           )}
           <div className="ellipsis-2">{desc}</div>
-          <div>
-            <a>
-              <img
-                style={{ height: 30, width: 30 }}
-                className="circle-img mr-8"
-                src={Logo}
-                alt="logo"
-              />
-              李圆圆
-            </a>
-            <span className="color-second ml-12">录入于: 2021-04-01</span>
-          </div>
+          {infos && (
+            <div>
+              {infos}
+            </div>
+          )}
           {actions && <div>{actions}</div>}
         </div>
       )}

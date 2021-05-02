@@ -17,13 +17,13 @@ const PictureListExample = () => {
           actions={
             <div>
               <Button size="small" text>
-                ✒ 编辑
+                ✒编辑
               </Button>
               <Button size="small" text>
-                🗑 删除
+                🗑删除
               </Button>
               <Button size="small" text>
-                🔒 锁定
+                🔒锁定
               </Button>
             </div>
           }

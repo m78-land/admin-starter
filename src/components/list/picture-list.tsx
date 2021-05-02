@@ -1,11 +1,10 @@
 import React from 'react';
-import { AspectRatio, Divider } from 'm78/layout';
+import { AspectRatio } from 'm78/layout';
 import { MediaQueryType } from '@m78/admin';
 
-import sty from './picture-list.module.scss';
 import img from '@/mock-data/images/1.jpg';
 import clsx from 'clsx';
-import { vie } from '@lxjx/utils';
+import sty from './picture-list.module.scss';
 
 interface Props {
   image: string;
