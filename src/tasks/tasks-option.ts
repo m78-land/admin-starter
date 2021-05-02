@@ -49,7 +49,7 @@ const tasksOption: TaskOpt = [
       {
         id: 'normal-list',
         name: '常规列表',
-        icon: '📃',
+        icon: '📜',
         component: React.lazy(() => import('../views/list/normal-list-example')),
       },
       {

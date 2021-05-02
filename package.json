@@ -32,12 +32,12 @@
   "dependencies": {
     "@lxjx/hooks": "^1.16.4",
     "@lxjx/utils": "^1.13.0",
-    "@m78/admin": "^0.1.1",
+    "@m78/admin": "^0.1.4",
     "@m78/style": "^1.0.22",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "clsx": "^1.1.1",
-    "m78": "^1.0.0-beta.57",
+    "m78": "^1.0.0-beta.63",
     "react": "^17.0.1",
     "react-dom": "^17.0.2",
     "tslib": "^2.1.0"

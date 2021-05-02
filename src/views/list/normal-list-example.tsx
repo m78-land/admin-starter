@@ -1,53 +1,55 @@
 import React from 'react';
-import { WindowLayout } from '@m78/admin';
-import List from 'm78/list';
+import { MediaQueryType, MediaQueryTypeMete, WindowLayout } from '@m78/admin';
+import { ListView, ListViewItem, ListViewItemStyleEnum } from 'm78/list-view';
+import { Check } from 'm78/check';
+import ResponsePagination from '@/components/response/response-pagination';
+
+const getColumn = (meta: MediaQueryTypeMete) => {
+  if (meta.isMedium()) return 2;
+  if (meta.isLarge()) return 3;
+  return 1;
+};
+
+const getItemStyle = (meta: MediaQueryTypeMete) => {
+  if (meta.isMedium() || meta.isLarge()) return ListViewItemStyleEnum.border;
+  return undefined;
+};
 
 const NormalListExample = () => {
   return (
-    <WindowLayout>
-      <List fullWidth column={3}>
-        <List.Title
-          title="列表标题"
-          desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi, atque aut deleniti dolor eum expedita fugit itaque laborum libero magnam natus nobis, nostrum pariatur quidem tempora ullam? Exercitationem, quod!"
-        />
-        <List.SubTitle title="常规列表" />
-        <List.Item title="普通内容" />
-        <List.Item title="操作项" required arrow />
-        <List.Item title="余额" extra="80000.00" required arrow />
-        <List.Item title="禁用" extra="80000.00" disabled />
-        <List.Item title="操作项" extra={<input type="checkbox" />} effect />
-        <List.Item left="😍" title="自定义左右内容" icon="😆" />
-        <List.SubTitle title="复杂列表" />
-        <List.Item title="多行列表" desc="行描述行描述" extra="额外说明" />
-        <List.Item
-          title="多行列表"
-          desc="行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述"
-          extra="额外说明"
-        />
-        <List.Item
-          left={<div style={{ backgroundColor: '#ccc', width: 60, height: 60 }} />}
-          leftAlign="top"
-          title="多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表多行列表"
-          desc="行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述行描述"
-          extra="额外说明"
-        />
-        <List.Item
-          left={<div style={{ backgroundColor: '#ccc', width: 76, height: 76 }} />}
-          leftAlign="top"
-          title="标题标题标题标题标题标标题标题标题"
-          desc="描述描述描述述描述描述描述描述描述"
-          extra="次要文本"
-          footLeft="页脚文本页脚文本页脚文本"
-          footRight="2020-01-01"
-          arrow
-        >
-          表单区域
-        </List.Item>
-        <List.Footer>
-          底部描述
-          <p>这是对该列表的一段描述</p>
-        </List.Footer>
-      </List>
+    <WindowLayout footer={<ResponsePagination total={40} defaultPage={1} jumper />}>
+      <MediaQueryType>
+        {meta => (
+          <ListView effect column={getColumn(meta)} itemStyle={getItemStyle(meta)}>
+            <ListViewItem leading="🍊" title="橘子" arrow />
+            <ListViewItem leading="🍉" title="西瓜" arrow />
+            <ListViewItem leading="🥝" title="猕猴桃" arrow desc="水果之王" />
+            <ListViewItem leading="🍇" title="葡萄" trailing={<Check type="switch" />} />
+            <ListViewItem leading="🍓" title="草莓" arrow trailing="其实不是水果" />
+            <ListViewItem
+              leading="🍒"
+              title={
+                <span>
+                  樱<span className="color-red">桃</span>
+                </span>
+              }
+              arrow
+            />
+            <ListViewItem
+              leading="🍋"
+              title="柠檬"
+              arrow
+              desc="一年一度的“我吃柠檬”挑战又要开始啦~，请记住我们的活动代号“#WCNM#”"
+            />
+            <ListViewItem leading="🍍" title="菠萝" arrow trailing="也叫凤梨" />
+            <ListViewItem leading="🍎" title="苹果" arrow />
+            <ListViewItem leading="🍈" title="甜瓜" arrow />
+            <ListViewItem leading="🍑" title="桃" arrow />
+            <ListViewItem leading="🍐" title="梨" arrow />
+            <ListViewItem leading="🍌" title="香蕉" arrow />
+          </ListView>
+        )}
+      </MediaQueryType>
     </WindowLayout>
   );
 };

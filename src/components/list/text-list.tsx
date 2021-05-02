@@ -1,6 +1,5 @@
-import Button from 'm78/button';
+import { Button } from 'm78/button';
 import React from 'react';
-import { Divider } from 'm78/layout';
 import Logo from '@m78/admin/assets/logo.png';
 
 import sty from './text-list.module.scss';

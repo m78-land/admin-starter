@@ -1,5 +1,5 @@
 import React from 'react';
-import Pagination from 'm78/pagination';
+import { Pagination } from 'm78/pagination';
 import { MediaQueryType } from '@m78/admin';
 
 type PaginationType = typeof Pagination;

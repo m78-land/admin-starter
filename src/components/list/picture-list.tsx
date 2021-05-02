@@ -29,17 +29,7 @@ const PictureList = ({ image, title, desc, actions }: Props) => {
             <div className="p-12">
               <div className="fs-md ellipsis">{title}</div>
               {desc && <div className={clsx(sty.PictureListDesc, 'ellipsis-2')}>{desc}</div>}
-              {actions && (
-                <div className="mt-8 ellipsis">
-                  <div>
-                    <span className="cus-p">✒ 编辑</span>
-                    <Divider vertical />
-                    <span className="cus-p">🗑 删除</span>
-                    <Divider vertical />
-                    <span className="cus-p">🔒 锁定</span>
-                  </div>
-                </div>
-              )}
+              {actions && <div className="mt-8 ellipsis">{actions}</div>}
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@m78/admin';
-import Button from 'm78/button';
+import { Button } from 'm78/button';
 
 const Demo2 = () => {
   return (

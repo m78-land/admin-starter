@@ -1,8 +1,8 @@
 import React from 'react';
-import Form from 'm78/form';
-import Input from 'm78/input';
+import { Form } from 'm78/form';
+import { Input } from 'm78/input';
 import { Row } from 'm78/layout';
-import Button from 'm78/button';
+import { Button } from 'm78/button';
 import { Link, Login as AdminLogin } from '@m78/admin';
 import Logo from '@m78/admin/assets/logo.png';
 
