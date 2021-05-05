@@ -1,7 +1,12 @@
 import { TaskOpt } from '@m78/admin';
 import React from 'react';
 
-const tasksOption: TaskOpt = [
+const formSize = {
+  width: 770,
+  height: 620,
+};
+
+const option: TaskOpt = [
   {
     name: '测试功能',
     children: [
@@ -71,20 +76,25 @@ const tasksOption: TaskOpt = [
     children: [
       {
         id: 'base-form',
-        name: '基础表单',
+        name: '常规表单',
         icon: '📑',
         component: React.lazy(() => import('../views/form/base-form')),
-        width: 760,
-        height: 620,
+        ...formSize,
       },
-      // {
-      //   id: 'step-form',
-      //   name: '分步表单',
-      //   icon: '📰',
-      //   component: React.lazy(() => import('../views/form/step-form')),
-      //   width: 760,
-      //   height: 620,
-      // },
+      {
+        id: 'step-form',
+        name: '分步表单',
+        icon: '📰',
+        component: React.lazy(() => import('../views/form/step-form')),
+        ...formSize,
+      },
+      {
+        id: 'responsive-form',
+        name: '响应式表单',
+        icon: '🖥',
+        component: React.lazy(() => import('../views/form/responsive-form')),
+        ...formSize,
+      },
     ],
   },
   {
@@ -95,8 +105,7 @@ const tasksOption: TaskOpt = [
         name: '注册',
         icon: '✏',
         component: React.lazy(() => import('../views/user/register')),
-        width: 760,
-        height: 620,
+        ...formSize,
       },
       {
         id: 'forget_psw',
@@ -108,4 +117,4 @@ const tasksOption: TaskOpt = [
   },
 ];
 
-export default tasksOption;
+export default option;

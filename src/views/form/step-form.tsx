@@ -1,5 +1,5 @@
 import React from 'react';
-import { WindowLayout, WindowLayoutSection } from '@m78/admin';
+import { WindowLayout } from '@m78/admin';
 import { Form, useForm } from 'm78/form';
 import { Input } from 'm78/input';
 import { Button, ButtonColorEnum } from 'm78/button';
@@ -8,6 +8,7 @@ import { CheckBox } from 'm78/check-box';
 import { Select } from 'm78/select';
 import { Tree } from 'm78/tree';
 import { SizeEnum } from 'm78/types';
+import { Spacer } from 'm78/layout';
 
 const BaseForm = () => {
   const [form] = useForm();
@@ -19,6 +20,20 @@ const BaseForm = () => {
           提交
         </Button>
       }
+      sideTabs={[
+        {
+          label: '基础信息',
+          selector: '#SF_BASE',
+        },
+        {
+          label: '次要信息',
+          selector: '#SF_SUB',
+        },
+        {
+          label: '其他信息',
+          selector: '#SF_OTHER',
+        },
+      ]}
     >
       <Form
         form={form}
@@ -26,18 +41,30 @@ const BaseForm = () => {
         onFinish={e => {
           alert(JSON.stringify(e, null, 4));
         }}
-        // layout="horizontal"
       >
-        <WindowLayoutSection label="基础信息">
-          <Form.Item label="食品名称" name="title" required>
-            <Input placeholder="请输入商品名称" />
-          </Form.Item>
-          <Form.Item label="食品描述" name="desc" required>
-            <Input textArea charCount maxLength={100} placeholder="请输入食品描述" />
-          </Form.Item>
-        </WindowLayoutSection>
+        <div id="SF_BASE">
+          <Form.Title subTile>基础信息</Form.Title>
 
-        <WindowLayoutSection label="重要信息">
+          <Form.Item label="生鲜名称" name="title" required>
+            <Input placeholder="请输入生鲜名称" />
+          </Form.Item>
+          <Form.Item label="编号" name="number" required>
+            <Input placeholder="请输入生鲜编号" />
+          </Form.Item>
+          <Form.Item label="描述" name="desc" required>
+            <Input textArea charCount maxLength={100} placeholder="请输入生鲜描述" />
+          </Form.Item>
+        </div>
+
+        <div id="SF_SUB">
+          <Form.Title subTile>次要信息</Form.Title>
+
+          <Form.Item label="标签" name="tags" required>
+            <Input placeholder="请输入生鲜标签" />
+          </Form.Item>
+          <Form.Item label="门店" name="shop" required>
+            <Input placeholder="请输入所属门店" />
+          </Form.Item>
           <Form.Item label="日期" name="date" required>
             <Dates placeholder="选择入库期/保质期" type={DateType.DATE} range />
           </Form.Item>
@@ -65,9 +92,11 @@ const BaseForm = () => {
               ]}
             />
           </Form.Item>
-        </WindowLayoutSection>
+        </div>
 
-        <WindowLayoutSection label="其他信息">
+        <div id="SF_OTHER">
+          <Form.Title subTile>其他信息</Form.Title>
+
           <Form.Item label="操作员" name="staff" required>
             <Select
               options={[
@@ -91,7 +120,7 @@ const BaseForm = () => {
               placeholder="请选择操作员"
             />
           </Form.Item>
-          <Form.Item label="产地" name="date" required>
+          <Form.Item label="产地" name="source" required>
             <Tree
               style={{ width: '100%' }}
               multipleCheckable
@@ -151,7 +180,9 @@ const BaseForm = () => {
               defaultOpens={['JS', '基本对象']}
             />
           </Form.Item>
-        </WindowLayoutSection>
+        </div>
+
+        <Spacer height={200} />
       </Form>
     </WindowLayout>
   );

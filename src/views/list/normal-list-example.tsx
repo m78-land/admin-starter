@@ -20,7 +20,7 @@ const NormalListExample = () => {
     <WindowLayout footer={<ResponsePagination total={40} defaultPage={1} jumper />}>
       <MediaQueryType>
         {meta => (
-          <ListView effect column={getColumn(meta)} itemStyle={getItemStyle(meta)}>
+          <ListView effect column={getColumn(meta)} itemStyle={getItemStyle(meta)} className="p-8">
             <ListViewItem leading="🍊" title="橘子" arrow />
             <ListViewItem leading="🍉" title="西瓜" arrow />
             <ListViewItem leading="🥝" title="猕猴桃" arrow desc="水果之王" />

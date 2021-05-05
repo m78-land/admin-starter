@@ -2,7 +2,7 @@ import React from 'react';
 import { M78Admin, Auth, Badge, FuncBtn } from '@m78/admin';
 import configSeed from './seed/configSeed';
 
-import tasksOption from './tasks/tasks-option';
+import option from './tasks/option';
 
 Auth.setAuth(['user:cr', 'setting:ud']);
 
@@ -15,7 +15,7 @@ const App = () => {
     <M78Admin
       // width="70vw"
       // height="70vh"
-      tasks={tasksOption}
+      tasks={option}
       // desktopNode={<span>🎉🎉欢迎</span>}
       // footerNode={<div>🎉✨</div>}
       loading={false}

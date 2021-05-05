@@ -1,29 +1,29 @@
 import React from 'react';
-import { WindowLayout, WindowLayoutSection } from '@m78/admin';
+import { WindowLayout } from '@m78/admin';
 
 const Demo1 = () => {
   return (
     <WindowLayout>
-      <WindowLayoutSection label="内容区域1">
+      <div>
         {Array.from({ length: 20 }).map((item, ind) => (
           <div key={ind}>{ind}</div>
         ))}
-      </WindowLayoutSection>
-      <WindowLayoutSection label="内容区域2">
+      </div>
+      <div>
         {Array.from({ length: 20 }).map((item, ind) => (
           <div key={ind}>{ind}</div>
         ))}
-      </WindowLayoutSection>
-      <WindowLayoutSection label="内容区域3">
+      </div>
+      <div>
         {Array.from({ length: 20 }).map((item, ind) => (
           <div key={ind}>{ind}</div>
         ))}
-      </WindowLayoutSection>
-      <WindowLayoutSection label="内容区域4">
+      </div>
+      <div>
         {Array.from({ length: 20 }).map((item, ind) => (
           <div key={ind}>{ind}</div>
         ))}
-      </WindowLayoutSection>
+      </div>
     </WindowLayout>
   );
 };
