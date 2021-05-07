@@ -2,7 +2,7 @@ import { TaskOpt } from '@m78/admin';
 import React from 'react';
 
 const formSize = {
-  width: 770,
+  width: 780,
   height: 620,
 };
 
