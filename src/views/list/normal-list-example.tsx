@@ -9,7 +9,7 @@ import { Dates, DateType } from 'm78/dates';
 import { Select } from 'm78/select';
 import { Button } from 'm78/button';
 import { RadioBox } from 'm78/radio-box';
-import { getResponseColumn } from '@/components/response/getResponseColumn';
+import { getResponseColumn } from '@/components/response/get-response-column';
 
 const getColumn = (meta: MediaQueryTypeMete) => {
   if (meta.isMedium()) return 2;

@@ -6,7 +6,7 @@ import { Button } from 'm78/button';
 import ResponsePagination from '@/components/response/response-pagination';
 import Logo from '@m78/admin/assets/logo.png';
 import { Form } from 'm78/form';
-import { getResponseColumn } from '@/components/response/getResponseColumn';
+import { getResponseColumn } from '@/components/response/get-response-column';
 import { Input } from 'm78/input';
 import { Select } from 'm78/select';
 import { Dates, DateType } from 'm78/dates';

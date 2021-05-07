@@ -3,6 +3,7 @@ import { M78Admin, Auth, Badge, FuncBtn } from '@m78/admin';
 import configSeed from './seed/configSeed';
 
 import option from './tasks/option';
+import Desktop from '@/views/common/desktop/desktop';
 
 Auth.setAuth(['user:cr', 'setting:ud']);
 
@@ -48,6 +49,7 @@ const App = () => {
           label: '发布内容',
         },
       }}
+      desktopNode={<Desktop />}
       // authSeed={authSeed}
       // beforeTaskEach={opt => {
       //   if (opt.id === 'role1') {

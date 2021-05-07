@@ -4,6 +4,9 @@ import { MediaQueryType } from '@m78/admin';
 
 type PaginationType = typeof Pagination;
 
+/**
+ * 适应当前MediaQuery上下文的分页组件
+ * */
 const ResponsePagination: PaginationType = props => {
   return (
     <MediaQueryType>
