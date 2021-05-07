@@ -3,6 +3,12 @@ import { MediaQueryType, MediaQueryTypeMete, WindowLayout } from '@m78/admin';
 import { ListView, ListViewItem, ListViewItemStyleEnum } from 'm78/list-view';
 import { Check } from 'm78/check';
 import ResponsePagination from '@/components/response/response-pagination';
+import { Form } from 'm78/form';
+import { Input } from 'm78/input';
+import { CheckBox } from 'm78/check-box';
+import { Dates, DateType } from 'm78/dates';
+import { Select } from 'm78/select';
+import { Button } from 'm78/button';
 
 const getColumn = (meta: MediaQueryTypeMete) => {
   if (meta.isMedium()) return 2;
@@ -17,7 +23,49 @@ const getItemStyle = (meta: MediaQueryTypeMete) => {
 
 const NormalListExample = () => {
   return (
-    <WindowLayout footer={<ResponsePagination total={40} defaultPage={1} jumper />}>
+    <WindowLayout
+      topBar={
+        <Form column={3}>
+          <Form.Item label="关键词" name="keyword">
+            <Input placeholder="输入关键词搜索" />
+          </Form.Item>
+          <Form.Item label="类别" name="type">
+            <Select
+              options={[
+                {
+                  label: '🍉 水果',
+                  value: 1,
+                },
+                {
+                  label: '🍆 蔬菜',
+                  value: 2,
+                },
+                {
+                  label: '🌮 熟食',
+                  value: 3,
+                },
+                {
+                  label: '🥤 饮品',
+                  value: 4,
+                },
+              ]}
+              placeholder="请选择操作员"
+            />
+          </Form.Item>
+          <Form.Item label="入库时间" name="date">
+            <Dates placeholder="选择入库期/保质期" type={DateType.DATE} range />
+          </Form.Item>
+          <Form.Actions>
+            <div className="tr">
+              <Button type="submit" color="primary">
+                查询
+              </Button>
+            </div>
+          </Form.Actions>
+        </Form>
+      }
+      footer={<ResponsePagination total={40} defaultPage={1} jumper />}
+    >
       <MediaQueryType>
         {meta => (
           <ListView effect column={getColumn(meta)} itemStyle={getItemStyle(meta)} className="p-8">
