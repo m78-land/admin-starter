@@ -115,6 +115,25 @@ const option: TaskOpt = [
       },
     ],
   },
+  {
+    name: '系统',
+    children: [
+      {
+        id: 'setting',
+        name: '设置',
+        icon: '⚙',
+        component: React.lazy(() => import('../views/common/setting/setting')),
+        ...formSize,
+      },
+      {
+        id: 'help',
+        name: '帮助中心',
+        icon: '📙',
+        component: React.lazy(() => import('../views/common/setting/setting')),
+        ...formSize,
+      },
+    ],
+  },
 ];
 
 export default option;

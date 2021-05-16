@@ -1,9 +1,9 @@
 import React from 'react';
 import { M78Admin, Auth, Badge, FuncBtn } from '@m78/admin';
+import Desktop from '@/views/_widget/desktop/desktop';
 import configSeed from './seed/configSeed';
-
 import option from './tasks/option';
-import Desktop from '@/views/common/desktop/desktop';
+import FuncBarExtra from '@/views/_widget/func-bar-extra/func-bar-extra';
 
 Auth.setAuth(['user:cr', 'setting:ud']);
 
@@ -20,21 +20,6 @@ const App = () => {
       // desktopNode={<span>🎉🎉欢迎</span>}
       // footerNode={<div>🎉✨</div>}
       loading={false}
-      funcBarExtraNode={
-        <>
-          <FuncBtn text="设置" icon="⚙" small />
-          <FuncBtn text="帮助中心" icon="📙" small />
-          <FuncBtn
-            text="LXJ"
-            extraNode={
-              <Badge color="red" out>
-                23
-              </Badge>
-            }
-            circle
-          />
-        </>
-      }
       authNameMap={{
         user: '用户',
         setting: '设置',
@@ -49,6 +34,7 @@ const App = () => {
           label: '发布内容',
         },
       }}
+      funcBarExtraNode={<FuncBarExtra />}
       desktopNode={<Desktop />}
       // authSeed={authSeed}
       // beforeTaskEach={opt => {
@@ -59,10 +45,7 @@ const App = () => {
       //   return true;
       // }}
       config={config}
-      onConfigChange={conf => {
-        configSeed.setState(conf);
-        console.log('config change: ', conf);
-      }}
+      onConfigChange={configSeed.setState}
     />
   );
 };

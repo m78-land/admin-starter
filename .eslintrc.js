@@ -19,6 +19,7 @@ module.exports = {
     'no-void': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
     'jsx-a11y/no-noninteractive-tabindex': 'off',
-    'jsx-a11y/tabindex-no-positive': 'off'
+    'jsx-a11y/tabindex-no-positive': 'off',
+    'global-require': 'off',
   },
 };
