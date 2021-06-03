@@ -1,5 +1,6 @@
 import React from 'react';
-import { MediaQueryType, MediaQueryTypeMete, WindowLayout } from '@m78/admin';
+import { MediaQueryMeta, MediaQuery } from 'm78/layout';
+import { WindowLayout } from '@m78/admin';
 import listData from '@/mock-data/list-data';
 import PictureList from '@/components/list/picture-list';
 import { Button } from 'm78/button';
@@ -12,7 +13,7 @@ import { Dates, DateType } from 'm78/dates';
 import { RadioBox } from 'm78/radio-box';
 
 const PictureListExample = () => {
-  function renderFilters(meta: MediaQueryTypeMete) {
+  function renderFilters(meta: MediaQueryMeta) {
     return (
       <Form
         onReset={() => console.log('reset')}
@@ -81,7 +82,7 @@ const PictureListExample = () => {
   }
 
   return (
-    <MediaQueryType>
+    <MediaQuery>
       {meta => (
         <WindowLayout
           topBar={renderFilters(meta)}
@@ -110,7 +111,7 @@ const PictureListExample = () => {
           ))}
         </WindowLayout>
       )}
-    </MediaQueryType>
+    </MediaQuery>
   );
 };
 

@@ -2,9 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import debounce from 'lodash/debounce';
 import { useFn } from '@lxjx/hooks';
-import { Size } from 'm78/popper';
+import { isFunction, Size } from '@lxjx/utils';
 import sty from './auto-fit-box.module.scss';
-import { isFunction } from '@lxjx/utils';
 
 interface Props {
   children: ((size: Size) => React.ReactNode) | React.ReactNode;

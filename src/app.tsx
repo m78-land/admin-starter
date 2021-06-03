@@ -1,11 +1,15 @@
 import React from 'react';
-import { M78Admin, Auth, Badge, FuncBtn } from '@m78/admin';
+import { M78Admin } from '@m78/admin';
 import Desktop from '@/views/_widget/desktop/desktop';
+import FuncBarExtra from '@/views/_widget/func-bar-extra/func-bar-extra';
+import { createSeed } from 'm78/seed';
+import { createAuthPro } from 'm78/auth';
 import configSeed from './seed/configSeed';
 import option from './tasks/option';
-import FuncBarExtra from '@/views/_widget/func-bar-extra/func-bar-extra';
 
-Auth.setAuth(['user:cr', 'setting:ud']);
+const AuthPro = createAuthPro({
+  seed: createSeed(),
+});
 
 const App = () => {
   const config = configSeed.useState();
@@ -14,26 +18,13 @@ const App = () => {
 
   return (
     <M78Admin
+      authPro={AuthPro}
       // width="70vw"
       // height="70vh"
       tasks={option}
       // desktopNode={<span>🎉🎉欢迎</span>}
       // footerNode={<div>🎉✨</div>}
       loading={false}
-      authNameMap={{
-        user: '用户',
-        setting: '设置',
-      }}
-      customAuthKeysMap={{
-        b: {
-          name: 'batch',
-          label: '批处理',
-        },
-        p: {
-          name: 'publish',
-          label: '发布内容',
-        },
-      }}
       funcBarExtraNode={<FuncBarExtra />}
       desktopNode={<Desktop />}
       // authSeed={authSeed}

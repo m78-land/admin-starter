@@ -1,5 +1,6 @@
 import React from 'react';
-import { MediaQueryType, MediaQueryTypeMete, WindowLayout } from '@m78/admin';
+import { MediaQueryMeta, MediaQuery } from 'm78/layout';
+import { WindowLayout } from '@m78/admin';
 import { ListView, ListViewItem, ListViewItemStyleEnum } from 'm78/list-view';
 import { Check } from 'm78/check';
 import ResponsePagination from '@/components/response/response-pagination';
@@ -11,19 +12,19 @@ import { Button } from 'm78/button';
 import { RadioBox } from 'm78/radio-box';
 import { getResponseColumn } from '@/components/response/get-response-column';
 
-const getColumn = (meta: MediaQueryTypeMete) => {
+const getColumn = (meta: MediaQueryMeta) => {
   if (meta.isMedium()) return 2;
   if (meta.isLarge()) return 3;
   return 1;
 };
 
-const getItemStyle = (meta: MediaQueryTypeMete) => {
+const getItemStyle = (meta: MediaQueryMeta) => {
   if (meta.isMedium() || meta.isLarge()) return ListViewItemStyleEnum.border;
   return undefined;
 };
 
 const NormalListExample = () => {
-  function renderFilters(meta: MediaQueryTypeMete) {
+  function renderFilters(meta: MediaQueryMeta) {
     return (
       <Form
         onReset={() => console.log('reset')}
@@ -92,7 +93,7 @@ const NormalListExample = () => {
   }
 
   return (
-    <MediaQueryType>
+    <MediaQuery>
       {meta => (
         <WindowLayout
           topBar={renderFilters(meta)}
@@ -128,7 +129,7 @@ const NormalListExample = () => {
           </ListView>
         </WindowLayout>
       )}
-    </MediaQueryType>
+    </MediaQuery>
   );
 };
 

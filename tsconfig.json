@@ -4,7 +4,6 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
-//      "@m78/admin": ["src/index.tsx"],
     },
     "target": "es5",
     "lib": [
@@ -22,6 +21,7 @@
     "jsx": "react",
     "strictPropertyInitialization": false,
     "importHelpers": true,
+    "skipLibCheck": true,
   },
   "include": [
     "src/**/*",

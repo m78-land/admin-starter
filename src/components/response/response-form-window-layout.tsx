@@ -1,13 +1,8 @@
 import React from 'react';
-import {
-  MediaQueryType,
-  MediaQueryTypeMete,
-  TaskWindowLayoutProps,
-  WindowLayout,
-} from '@m78/admin';
+import { TaskWindowLayoutProps, WindowLayout } from '@m78/admin';
+import { MediaQueryMeta, MediaQuery, Spacer } from 'm78/layout';
 import { Button, ButtonColorEnum } from 'm78/button';
 import { DirectionEnum, SizeEnum } from 'm78/types';
-import { Spacer } from 'm78/layout';
 import { Form, FormProps, useForm } from 'm78/form';
 
 interface Props {
@@ -25,12 +20,12 @@ interface Props {
   responseColumn?: boolean;
 }
 
-function getLayout(meta: MediaQueryTypeMete, hasSideTabs: boolean) {
+function getLayout(meta: MediaQueryMeta, hasSideTabs: boolean) {
   if (hasSideTabs) return undefined;
   return meta.isXS() ? DirectionEnum.vertical : DirectionEnum.horizontal;
 }
 
-function getColumn(meta: MediaQueryTypeMete, responseColumn: boolean) {
+function getColumn(meta: MediaQueryMeta, responseColumn: boolean) {
   if (!responseColumn) return undefined;
   if (meta.isLarge()) return 4;
   if (meta.isMedium()) return 3;
@@ -63,7 +58,7 @@ const ResponseFormWindowLayout = ({
         )
       }
     >
-      <MediaQueryType>
+      <MediaQuery>
         {meta => (
           <>
             {!hasSideTabs && <Spacer height={32} />}
@@ -78,7 +73,7 @@ const ResponseFormWindowLayout = ({
             </Form>
           </>
         )}
-      </MediaQueryType>
+      </MediaQuery>
     </WindowLayout>
   );
 };

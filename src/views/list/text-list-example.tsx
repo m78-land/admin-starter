@@ -1,6 +1,6 @@
 import React from 'react';
-import { MediaQueryType, MediaQueryTypeMete, WindowLayout } from '@m78/admin';
-import TextList from '../../components/list/text-list';
+import { MediaQueryMeta, MediaQuery } from 'm78/layout';
+import { WindowLayout } from '@m78/admin';
 import listData from '@/mock-data/list-data';
 import { Button } from 'm78/button';
 import ResponsePagination from '@/components/response/response-pagination';
@@ -11,9 +11,10 @@ import { Input } from 'm78/input';
 import { Select } from 'm78/select';
 import { Dates, DateType } from 'm78/dates';
 import { RadioBox } from 'm78/radio-box';
+import TextList from '../../components/list/text-list';
 
 const TextListExample = () => {
-  function renderFilters(meta: MediaQueryTypeMete) {
+  function renderFilters(meta: MediaQueryMeta) {
     return (
       <Form
         onReset={() => console.log('reset')}
@@ -82,7 +83,7 @@ const TextListExample = () => {
   }
 
   return (
-    <MediaQueryType>
+    <MediaQuery>
       {meta => (
         <WindowLayout
           topBar={renderFilters(meta)}
@@ -125,7 +126,7 @@ const TextListExample = () => {
           ))}
         </WindowLayout>
       )}
-    </MediaQueryType>
+    </MediaQuery>
   );
 };
 

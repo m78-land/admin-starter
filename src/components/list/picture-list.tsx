@@ -1,6 +1,5 @@
 import React from 'react';
-import { AspectRatio } from 'm78/layout';
-import { MediaQueryType } from '@m78/admin';
+import { AspectRatio, MediaQuery } from 'm78/layout';
 
 import img from '@/mock-data/images/1.jpg';
 import clsx from 'clsx';
@@ -18,7 +17,7 @@ interface Props {
 
 const PictureList = ({ image, title, desc, actions }: Props) => {
   return (
-    <MediaQueryType>
+    <MediaQuery>
       {meta => (
         <div className={clsx(sty.PictureList, `__${meta.type}`)}>
           <div className={sty.PictureListWrap}>
@@ -33,7 +32,7 @@ const PictureList = ({ image, title, desc, actions }: Props) => {
           </div>
         </div>
       )}
-    </MediaQueryType>
+    </MediaQuery>
   );
 };
 

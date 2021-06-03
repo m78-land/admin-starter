@@ -184,7 +184,7 @@ const Desktop = () => {
                   <span className="color-title mr-4">📣</span>动态
                 </div>
                 <AutoFitBox style={{ top: 32, right: 4, left: 4 }}>
-                  <Scroller>
+                  <Scroller hideScrollbar scrollFlag>
                     <ListView className="p-8" size="small" itemStyle="splitLine">
                       <ListViewItem
                         title={
@@ -236,7 +236,7 @@ const Desktop = () => {
                   <span className="color-title mr-4">🎉</span>今日员工销售排行
                 </div>
                 <AutoFitBox style={{ top: 32, right: 4, left: 4 }}>
-                  <Scroller>
+                  <Scroller hideScrollbar scrollFlag>
                     <ListView className="p-8" size="small" itemStyle="splitLine">
                       <ListViewItem
                         leading={<img className="m78a-avatar" src={avatar1} alt="" />}
