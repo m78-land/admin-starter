@@ -1,9 +1,17 @@
 import { cacheMiddleware, createSeed } from 'm78/seed';
 import { M78AdminConfig } from '@m78/admin';
 
+type DeskTypeKeys = 'desk' | 'workbench';
+
+/** 桌面类型 */
+export enum DeskTypesEnum {
+  desk = 'desk',
+  workbench = 'workbench',
+}
+
 interface CustomConfig extends M78AdminConfig {
-  /** 桌面类型: true -> 桌面 | false -> 工作台 */
-  deskMode?: boolean;
+  /** 'workbench' | 桌面类型, 'desk' -> 桌面 | 'workbench' -> 工作台 */
+  deskType?: DeskTypesEnum | DeskTypeKeys;
   /** 桌面背景 */
   deskBg?: string;
   /** 背景透明度 */
@@ -18,7 +26,8 @@ const configSeed = createSeed<CustomConfig>({
   state: {
     collectFunc: ['demo1', 'demo2', 'demo3', 'register'],
     darkMode: false,
-    deskMode: true,
+    deskType: DeskTypesEnum.workbench,
+    maxWindow: 12,
     deskOpacity: 60,
   },
 });

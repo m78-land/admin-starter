@@ -1,10 +1,12 @@
 import React from 'react';
-import { Badge, FuncBtn } from '@m78/admin';
+import { Badge, FuncBtn, Link } from '@m78/admin';
 
 const FuncBarExtra = () => {
   return (
     <>
-      <FuncBtn text="设置" icon="⚙" small />
+      <Link id="setting">
+        <FuncBtn text="设置" icon="⚙" small />
+      </Link>
       <FuncBtn text="帮助中心" icon="📙" small />
       <FuncBtn
         text="LXJ"

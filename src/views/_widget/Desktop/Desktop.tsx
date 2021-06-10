@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import clsx from 'clsx';
 import bg from '@/assets/bg.png';
-import configSeed from '@/seed/configSeed';
+import configSeed, { DeskTypesEnum } from '@/seed/configSeed';
 import DesktopLT from '@/views/_widget/Desktop/DesktopLT';
 import DesktopLC from '@/views/_widget/Desktop/DesktopLC';
 import DesktopLB from '@/views/_widget/Desktop/DesktopLB';
@@ -64,7 +64,7 @@ const Desktop = () => {
     );
   }
 
-  const deskMode = config.deskMode;
+  const isDesk = config.deskType === 'desk';
 
   return (
     <>
@@ -72,14 +72,14 @@ const Desktop = () => {
         className={sty.toggleBtn}
         onClick={() =>
           configSeed.setState({
-            deskMode: !deskMode,
+            deskType: isDesk ? DeskTypesEnum.workbench : DeskTypesEnum.desk,
           })
         }
       >
-        {deskMode ? '工作台' : '桌面'}
+        {isDesk ? '工作台' : '桌面'}
       </div>
 
-      {deskMode ? renderDesk() : renderWorkbench()}
+      {isDesk ? renderDesk() : renderWorkbench()}
     </>
   );
 };

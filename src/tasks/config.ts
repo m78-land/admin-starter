@@ -123,6 +123,7 @@ const config: TaskOpt = [
         name: '设置',
         icon: '⚙',
         component: React.lazy(() => import('../views/Common/Setting/Setting')),
+        singleton: true,
         ...formSize,
       },
       {

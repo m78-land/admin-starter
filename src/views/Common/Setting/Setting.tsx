@@ -5,8 +5,9 @@ import { Input } from 'm78/input';
 import { Check } from 'm78/check';
 import { useFn } from '@lxjx/hooks';
 import _debounce from 'lodash/debounce';
-import configSeed from '@/seed/configSeed';
+import configSeed, { DeskTypesEnum } from '@/seed/configSeed';
 import SimplifyFormLayout from '@/components/SimplifyFormLayout/SimplifyFormLayout';
+import { RadioBox } from 'm78/radio-box';
 
 const Setting = () => {
   const changeHandle = useFn(configSeed.setState, fn => _debounce(fn, 250));
@@ -37,7 +38,7 @@ const Setting = () => {
       <Form.Item
         label="最大窗口数"
         name="maxWindow"
-        desc="同时打开的最大窗口数量, 默认为12,可以根据电脑配置适当增减此值"
+        desc="同时打开的最大窗口数量, 可以根据电脑配置适当增减此值"
       >
         <Input type="integer" />
       </Form.Item>
@@ -50,8 +51,19 @@ const Setting = () => {
       <Form.Item label="次要主题色" name="subColor">
         <Input type={'color' as any} style={{ width: 100 }} allowClear={false} />
       </Form.Item>
-      <Form.Item label="桌面类型" name="deskMode" valuePropName="checked">
-        <Check type="switch" beforeLabel="工作台" label="桌面" />
+      <Form.Item label="桌面类型" name="deskType">
+        <RadioBox
+          options={[
+            {
+              label: '工作台',
+              value: DeskTypesEnum.workbench,
+            },
+            {
+              label: '桌面',
+              value: DeskTypesEnum.desk,
+            },
+          ]}
+        />
       </Form.Item>
       <Form.Item label="桌面背景" name="deskBg">
         <Input />

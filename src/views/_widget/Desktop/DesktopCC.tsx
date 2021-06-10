@@ -19,51 +19,211 @@ const DesktopCC = () => {
         <span>门店管理员 </span>
         <Divider vertical />
         <span>
-          未读消息数量 <a className="fs-md">4</a>
+          未读消息 <a className="fs-md">4</a>
         </span>
         <Divider vertical />
         <span>
-          待处理审批 <a className="fs-md color-red">12</a>
+          待审批 <a className="fs-md color-red">12</a>
         </span>
         <Divider vertical />
         <span>
-          今日排名 <a className="fs-md">6</a>
+          今日排名 <a className="fs-md color-green">6</a>
         </span>
       </div>
       <Divider />
       <div className="fs-md">快捷操作</div>
-      <AutoFitBox style={{ left: 20, top: 170, right: 20, bottom: 30 }}>
-        <Scroller className="mt-12" scrollFlag hideScrollbar>
-          <Link className={sty.quickLink} id="normal-list">
-            常规列表
-          </Link>
-          <Link className={sty.quickLink} id="text-list">
-            文字列表
-          </Link>
-          <Link className={sty.quickLink} id="picture-list">
-            图片列表
-          </Link>
-          <Link className={sty.quickLink} id="base-form">
-            常规表单
-          </Link>
-          <Link className={sty.quickLink} id="step-form">
-            分步表单
-          </Link>
-          <Link className={sty.quickLink} id="responsive-form">
-            响应式表单
-          </Link>
-          <Link className={sty.quickLink} id="responsive-form">
-            测试功能1
-          </Link>
-          <Link className={sty.quickLink} id="responsive-form">
-            测试功能2
-          </Link>
-          <Link className={sty.quickLink} id="responsive-form">
-            测试功能3
-          </Link>
-          <span className={sty.quickLink}>📌添加</span>
-        </Scroller>
-      </AutoFitBox>
+      <Scroller className="mt-12" scrollFlag hideScrollbar>
+        <Link className={sty.quickLink} id="normal-list">
+          常规列表
+        </Link>
+        <Link className={sty.quickLink} id="text-list">
+          文字列表
+        </Link>
+        <Link className={sty.quickLink} id="picture-list">
+          图片列表
+        </Link>
+        <Link className={sty.quickLink} id="base-form">
+          常规表单
+        </Link>
+        <Link className={sty.quickLink} id="step-form">
+          分步表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          响应式表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能1
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能2
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能3
+        </Link>
+        <Link className={sty.quickLink} id="normal-list">
+          常规列表
+        </Link>
+        <Link className={sty.quickLink} id="text-list">
+          文字列表
+        </Link>
+        <Link className={sty.quickLink} id="picture-list">
+          图片列表
+        </Link>
+        <Link className={sty.quickLink} id="base-form">
+          常规表单
+        </Link>
+        <Link className={sty.quickLink} id="step-form">
+          分步表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          响应式表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能1
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能2
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能3
+        </Link>
+        <Link className={sty.quickLink} id="normal-list">
+          常规列表
+        </Link>
+        <Link className={sty.quickLink} id="text-list">
+          文字列表
+        </Link>
+        <Link className={sty.quickLink} id="picture-list">
+          图片列表
+        </Link>
+        <Link className={sty.quickLink} id="base-form">
+          常规表单
+        </Link>
+        <Link className={sty.quickLink} id="step-form">
+          分步表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          响应式表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能1
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能2
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能3
+        </Link>
+        <Link className={sty.quickLink} id="normal-list">
+          常规列表
+        </Link>
+        <Link className={sty.quickLink} id="text-list">
+          文字列表
+        </Link>
+        <Link className={sty.quickLink} id="picture-list">
+          图片列表
+        </Link>
+        <Link className={sty.quickLink} id="base-form">
+          常规表单
+        </Link>
+        <Link className={sty.quickLink} id="step-form">
+          分步表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          响应式表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能1
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能2
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能3
+        </Link>
+        <Link className={sty.quickLink} id="normal-list">
+          常规列表
+        </Link>
+        <Link className={sty.quickLink} id="text-list">
+          文字列表
+        </Link>
+        <Link className={sty.quickLink} id="picture-list">
+          图片列表
+        </Link>
+        <Link className={sty.quickLink} id="base-form">
+          常规表单
+        </Link>
+        <Link className={sty.quickLink} id="step-form">
+          分步表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          响应式表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能1
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能2
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能3
+        </Link>
+        <Link className={sty.quickLink} id="normal-list">
+          常规列表
+        </Link>
+        <Link className={sty.quickLink} id="text-list">
+          文字列表
+        </Link>
+        <Link className={sty.quickLink} id="picture-list">
+          图片列表
+        </Link>
+        <Link className={sty.quickLink} id="base-form">
+          常规表单
+        </Link>
+        <Link className={sty.quickLink} id="step-form">
+          分步表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          响应式表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能1
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能2
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能3
+        </Link>
+        <Link className={sty.quickLink} id="normal-list">
+          常规列表
+        </Link>
+        <Link className={sty.quickLink} id="text-list">
+          文字列表
+        </Link>
+        <Link className={sty.quickLink} id="picture-list">
+          图片列表
+        </Link>
+        <Link className={sty.quickLink} id="base-form">
+          常规表单
+        </Link>
+        <Link className={sty.quickLink} id="step-form">
+          分步表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          响应式表单
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能1
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能2
+        </Link>
+        <Link className={sty.quickLink} id="responsive-form">
+          测试功能3
+        </Link>
+        <span className={sty.quickLink}>📌添加</span>
+      </Scroller>
     </div>
   );
 };

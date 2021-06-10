@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Center, Divider } from 'm78/layout';
+import { Column, Divider, Row } from 'm78/layout';
+import { CaretDownOutlined, CaretUpOutlined } from 'm78/icon';
 import sty from './Desktop.module.scss';
 
 const DesktopLT = () => {
@@ -9,38 +10,71 @@ const DesktopLT = () => {
       <div className={sty.title}>
         <span className="color-title mr-4">✨</span>统计
       </div>
-      <Center>
-        <div>
-          {/* <div>数据一览</div> */}
-          <div className={sty.infoLayout}>
-            <div className="color-second">销售额</div>
-            <div className={clsx(sty.mainFont, 'color-cyan')}>¥6217</div>
-          </div>
-          <div className={sty.infoLayout}>
-            <div className="color-second">访问量</div>
-            <div className={clsx(sty.mainFont, 'color-purple')}>9321</div>
-          </div>
-          <div className={sty.infoLayout}>
-            <div className="color-second">注册量</div>
-            <div className={clsx(sty.mainFont, 'color-blue')}>12</div>
+
+      <Column style={{ height: '100%' }} mainAlign="center">
+        <Row crossAlign="start">
+          <div className={clsx(sty.infoLayout, 'tr')} style={{ paddingLeft: 0 }}>
+            <div className="color-second">日销售额</div>
+            <div className={sty.mainFont}>
+              <span className="color-second fs-12">￥</span>6217
+            </div>
+            <div className="fs-12 color-second mt-4">
+              日同比
+              <span className="fs-12 color-red">
+                <CaretUpOutlined />
+                4.2%
+              </span>
+            </div>
           </div>
 
-          <Divider />
+          <div className={sty.infoLayout} style={{ paddingRight: 0 }}>
+            <div className="color-second">注册数</div>
+            <div className={sty.mainFont}>
+              9321<span className="color-second fs-12">人</span>
+            </div>
+            <div className="fs-12 color-second mt-4">
+              较昨日增长
+              <span className="color-red">
+                <CaretUpOutlined />
+                2.15%
+              </span>
+            </div>
+          </div>
+        </Row>
 
-          <div className={sty.infoLayout}>
+        <Divider margin={0} />
+
+        <Row crossAlign="start">
+          <div className={clsx(sty.infoLayout, 'tr')} style={{ paddingLeft: 0 }}>
             <div className="color-second">总销售额</div>
-            <div className={clsx(sty.mainFont, 'color-red')}>¥56217</div>
+            <div className={sty.mainFont}>
+              <span className="color-second fs-12">￥</span>567217
+            </div>
+            <div className="fs-12 color-second mt-4">
+              年总值
+              <span className="color-red">
+                <CaretUpOutlined />
+                ￥67051
+              </span>
+            </div>
           </div>
-          <div className={sty.infoLayout}>
-            <div className="color-second">总访问量</div>
-            <div className={clsx(sty.mainFont, 'color-orange')}>29321</div>
+
+          <div className={sty.infoLayout} style={{ paddingRight: 0 }}>
+            <div className="color-second">客流量</div>
+            <div className={sty.mainFont}>
+              1763
+              <span className="color-second fs-12">人</span>
+            </div>
+            <div className="fs-12 color-second mt-4">
+              较平均值
+              <span className="color-green">
+                <CaretDownOutlined />
+                2.15%
+              </span>
+            </div>
           </div>
-          <div className={sty.infoLayout}>
-            <div className="color-second">总注册量</div>
-            <div className={clsx(sty.mainFont, 'color-green')}>873</div>
-          </div>
-        </div>
-      </Center>
+        </Row>
+      </Column>
     </div>
   );
 };
