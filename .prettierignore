@@ -2,7 +2,7 @@
 package.json
 .umi
 .umi-production
-/dist
+/docs
 /lib
 .dockerignore
 .DS_Store

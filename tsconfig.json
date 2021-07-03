@@ -34,6 +34,6 @@
     "babel.config.js"
   ],
   "exclude": [
-    "dist",
+    "docs"
   ]
 }
