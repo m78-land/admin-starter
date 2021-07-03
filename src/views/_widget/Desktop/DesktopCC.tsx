@@ -1,6 +1,5 @@
 import React from 'react';
 import clsx from 'clsx';
-import AutoFitBox from '@/components/Response/AutoFitBox';
 import avatar2 from '@/assets/mock/2.jpg';
 import { Divider } from 'm78/layout';
 import { Scroller } from 'm78/scroller';

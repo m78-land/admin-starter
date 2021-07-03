@@ -8,47 +8,6 @@ const formSize = {
 
 const config: TaskOpt = [
   {
-    name: '测试功能',
-    children: [
-      {
-        id: 'demo1',
-        name: '测试功能1',
-        icon: '✨',
-        component: React.lazy(() => import('../views/Demo/Demo1')),
-      },
-      {
-        id: 'demo2',
-        name: '测试功能2',
-        icon: '🎉',
-        component: React.lazy(() => import('../views/Demo/Demo2')),
-      },
-      {
-        id: 'demo3',
-        name: '测试功能3',
-        icon: '🎨',
-        component: React.lazy(() => import('../views/Demo/Demo3')),
-      },
-      {
-        id: 'demo4',
-        name: '测试功能4',
-        icon: '🎨',
-        component: React.lazy(() => import('../views/Demo/Demo4')),
-      },
-      {
-        id: 'demo5',
-        name: '测试功能5',
-        icon: '💎',
-        component: React.lazy(() => import('../views/Demo/Demo5')),
-      },
-      {
-        id: 'demo6',
-        name: '测试功能6',
-        icon: '🐶',
-        component: React.lazy(() => import('../views/Demo/Demo6')),
-      },
-    ],
-  },
-  {
     name: '列表',
     children: [
       {
@@ -124,6 +83,7 @@ const config: TaskOpt = [
         icon: '⚙',
         component: React.lazy(() => import('../views/Common/Setting/Setting')),
         singleton: true,
+        hide: true,
         ...formSize,
       },
       {
@@ -131,6 +91,7 @@ const config: TaskOpt = [
         name: '帮助中心',
         icon: '📙',
         component: React.lazy(() => import('../views/Common/Setting/Setting')),
+        hide: true,
         ...formSize,
       },
     ],

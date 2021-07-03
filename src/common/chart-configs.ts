@@ -1,5 +1,3 @@
-import { PieConfig } from '@ant-design/charts/es/pie';
-
 export const pieBaseConfig = {
   angleField: 'value',
   colorField: 'type',

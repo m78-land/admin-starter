@@ -4,6 +4,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/admin-starter/',
   plugins: [reactRefresh()],
   resolve: {
     alias: {

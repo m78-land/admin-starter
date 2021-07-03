@@ -16,10 +16,11 @@
   },
   "license": "MIT",
   "scripts": {
-    "prebuild": "npm run lint && typecheck",
+    "prebuild": "npm run lint && npm run typecheck",
     "typecheck": "tsc --noEmit",
     "dev": "vite --config vite.config.ts",
     "build": "vite build --config vite.config.ts",
+    "build0": "vite build --config vite.config.ts",
     "lint:script": "eslint ./src --ext .js,.jsx,.ts,.tsx",
     "lint:prettier": "prettier --check ./src/**/*",
     "lint": "npm run lint:prettier && npm run lint:script",

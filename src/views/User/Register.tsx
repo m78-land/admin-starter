@@ -3,7 +3,6 @@ import { Form, useForm } from 'm78/form';
 import { Input } from 'm78/input';
 import { Button, ButtonColorEnum } from 'm78/button';
 import { WindowLayout } from '@m78/admin';
-import { Row } from 'm78/layout';
 import { SizeEnum } from 'm78/types';
 
 const Register = () => {

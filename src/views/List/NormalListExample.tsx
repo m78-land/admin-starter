@@ -8,9 +8,9 @@ import { Form } from 'm78/form';
 import { Input } from 'm78/input';
 import { Dates, DateType } from 'm78/dates';
 import { Select } from 'm78/select';
-import { Button } from 'm78/button';
 import { RadioBox } from 'm78/radio-box';
 import { getResponseColumn } from '@/components/Response/getResponseColumn';
+import SimplifyFilter from '@/components/SimplifyFilter/SimplifyFilter';
 
 const getItemStyle = (meta: MediaQueryMeta) => {
   if (meta.isSM() || meta.isMedium() || meta.isLarge()) return ListViewItemStyleEnum.border;
@@ -18,12 +18,12 @@ const getItemStyle = (meta: MediaQueryMeta) => {
 };
 
 const NormalListExample = () => {
-  function renderFilters(meta: MediaQueryMeta) {
+  function renderFilters(toggle: boolean) {
     return (
-      <Form
+      <SimplifyFilter
+        toggle={toggle}
         onReset={() => console.log('reset')}
-        onFinish={data => console.log(data)}
-        column={getResponseColumn(meta)}
+        onSearch={data => console.log('search', data)}
       >
         <Form.Item label="关键词" name="keyword">
           <Input placeholder="输入关键词搜索" />
@@ -53,9 +53,11 @@ const NormalListExample = () => {
             placeholder="请选择操作员查询"
           />
         </Form.Item>
+
         <Form.Item label="入库时间" name="date">
           <Dates placeholder="选择入库期/保质期查询" type={DateType.DATE} range />
         </Form.Item>
+
         <Form.Item label="发布者" name="publisher">
           <Input placeholder="输入发布者姓名查询" />
         </Form.Item>
@@ -74,15 +76,7 @@ const NormalListExample = () => {
             ]}
           />
         </Form.Item>
-        <Form.Actions>
-          <div className="tr">
-            <Button type="reset">重置</Button>
-            <Button type="submit" color="primary">
-              查询
-            </Button>
-          </div>
-        </Form.Actions>
-      </Form>
+      </SimplifyFilter>
     );
   }
 
@@ -90,7 +84,7 @@ const NormalListExample = () => {
     <MediaQuery>
       {meta => (
         <WindowLayout
-          topBar={renderFilters(meta)}
+          topBar={renderFilters}
           footer={<ResponsePagination total={40} defaultPage={1} jumper />}
         >
           <ListView

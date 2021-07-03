@@ -24,7 +24,16 @@ interface CustomConfig extends M78AdminConfig {
 const configSeed = createSeed<CustomConfig>({
   middleware: [cacheMiddleware('M78_ADMIN_CONFIG', { type: 'local' })],
   state: {
-    collectFunc: ['demo1', 'demo2', 'demo3', 'register'],
+    collectFunc: [
+      'normal-list',
+      'text-list',
+      'picture-list',
+      'base-form',
+      'step-form',
+      'responsive-form',
+      'register',
+      'forget_psw',
+    ],
     darkMode: false,
     deskType: DeskTypesEnum.workbench,
     maxWindow: 12,
